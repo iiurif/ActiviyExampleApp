@@ -8,7 +8,8 @@
         "Aumenta a disposição",
         "Promove o bem-estar mental"
       ],
-      "description": "A caminhada ao ar livre é uma excelente forma de se conectar com a natureza e cuidar da saúde. Pode ser feita em qualquer lugar, seja na cidade ou no campo, e é uma atividade de baixo impacto."
+      "description": "A caminhada ao ar livre é uma excelente forma de se conectar com a natureza e cuidar da saúde. Pode ser feita em qualquer lugar, seja na cidade ou no campo, e é uma atividade de baixo impacto.",
+      "category": "Atividade Física"
     },
     {
       "title": "Leitura de Livros",
@@ -18,7 +19,8 @@
         "Reduz o estresse",
         "Amplia o conhecimento"
       ],
-      "description": "A leitura é uma atividade que estimula a mente e pode ser uma excelente forma de escape. Além de entreter, ela ajuda a expandir horizontes e a melhorar a capacidade cognitiva."
+      "description": "A leitura é uma atividade que estimula a mente e pode ser uma excelente forma de escape. Além de entreter, ela ajuda a expandir horizontes e a melhorar a capacidade cognitiva.",
+      "category": "Leitura"
     },
     {
       "title": "Prática de Yoga",
@@ -28,7 +30,8 @@
         "Reduz a ansiedade",
         "Contribui para o bem-estar físico e mental"
       ],
-      "description": "O yoga é uma prática milenar que combina exercícios físicos, controle da respiração e meditação. É ótimo para quem busca relaxamento e fortalecimento ao mesmo tempo."
+      "description": "O yoga é uma prática milenar que combina exercícios físicos, controle da respiração e meditação. É ótimo para quem busca relaxamento e fortalecimento ao mesmo tempo.",
+      "category": "Atividade Física"
     },
     {
       "title": "Jardinagem",
@@ -38,7 +41,8 @@
         "Melhora a saúde mental",
         "Proporciona uma sensação de realização"
       ],
-      "description": "A jardinagem envolve cuidar das plantas, o que pode ser muito terapêutico. Além de embelezar o ambiente, ela traz benefícios à saúde mental e promove a sensação de cuidado e conquista."
+      "description": "A jardinagem envolve cuidar das plantas, o que pode ser muito terapêutico. Além de embelezar o ambiente, ela traz benefícios à saúde mental e promove a sensação de cuidado e conquista.",
+      "category": "Bem-Estar"
     },
     {
       "title": "Ciclismo",
@@ -48,7 +52,8 @@
         "Proporciona uma atividade ao ar livre",
         "Contribui para o bem-estar emocional"
       ],
-      "description": "O ciclismo é uma atividade que pode ser feita em diferentes níveis de intensidade. Além de ser uma ótima forma de transporte, ele também melhora a condição física e proporciona uma sensação de liberdade."
+      "description": "O ciclismo é uma atividade que pode ser feita em diferentes níveis de intensidade. Além de ser uma ótima forma de transporte, ele também melhora a condição física e proporciona uma sensação de liberdade.",
+      "category": "Atividade Física"
     },
     {
       "title": "Pintura ou Desenho",
@@ -58,7 +63,8 @@
         "Reduz o estresse",
         "Promove a expressão pessoal"
       ],
-      "description": "A pintura e o desenho são formas artísticas de expressão que ajudam a liberar emoções. Elas também estimulam a criatividade e permitem que você se conecte consigo mesmo."
+      "description": "A pintura e o desenho são formas artísticas de expressão que ajudam a liberar emoções. Elas também estimulam a criatividade e permitem que você se conecte consigo mesmo.",
+      "category": "Artes"
     },
     {
       "title": "Meditação",
@@ -68,7 +74,8 @@
         "Traz clareza mental",
         "Promove o equilíbrio emocional"
       ],
-      "description": "A meditação é uma prática de relaxamento e foco mental, muito utilizada para reduzir o estresse e melhorar a saúde emocional. Pode ser feita de forma guiada ou de maneira independente."
+      "description": "A meditação é uma prática de relaxamento e foco mental, muito utilizada para reduzir o estresse e melhorar a saúde emocional. Pode ser feita de forma guiada ou de maneira independente.",
+      "category": "Bem-Estar"
     },
     {
       "title": "Assistir a Filmes ou Séries",
@@ -78,7 +85,8 @@
         "Amplia a cultura",
         "Pode ser uma forma de socialização"
       ],
-      "description": "Assistir a filmes ou séries é uma maneira popular de lazer. Além de proporcionar diversão, pode ser uma forma de aprendizado e de vivenciar diferentes culturas e perspectivas."
+      "description": "Assistir a filmes ou séries é uma maneira popular de lazer. Além de proporcionar diversão, pode ser uma forma de aprendizado e de vivenciar diferentes culturas e perspectivas.",
+      "category": "Entretenimento"
     },
     {
       "title": "Cozinhar Novas Receitas",
@@ -88,7 +96,8 @@
         "Oferece prazer",
         "Pode ser uma atividade social"
       ],
-      "description": "Cozinhar é uma atividade criativa que pode ser tanto um passatempo quanto uma habilidade útil. Experimentar novas receitas pode ser uma maneira divertida de explorar a culinária e melhorar a alimentação."
+      "description": "Cozinhar é uma atividade criativa que pode ser tanto um passatempo quanto uma habilidade útil. Experimentar novas receitas pode ser uma maneira divertida de explorar a culinária e melhorar a alimentação.",
+      "category": "Culinária"
     },
     {
       "title": "Jogar Jogos de Tabuleiro",
@@ -98,8 +107,129 @@
         "Ajuda a melhorar a comunicação",
         "É uma atividade divertida para grupos"
       ],
-      "description": "Jogos de tabuleiro são uma ótima maneira de passar o tempo com amigos e família. Além de serem muito divertidos, eles estimulam o pensamento estratégico e a cooperação."
+      "description": "Jogos de tabuleiro são uma ótima maneira de passar o tempo com amigos e família. Além de serem muito divertidos, eles estimulam o pensamento estratégico e a cooperação.",
+      "category": "Entretenimento"
+    },
+    {
+      "title": "Tocar um Instrumento Musical",
+      "benefits": [
+        "Desenvolve habilidades motoras",
+        "Estimula a criatividade",
+        "Aumenta a concentração",
+        "Proporciona prazer e bem-estar"
+      ],
+      "description": "Tocar um instrumento musical é uma excelente forma de desenvolver habilidades cognitivas e motoras. Além de ser um ótimo passatempo, também pode ser uma forma de expressão emocional.",
+      "category": "Música"
+    },
+    {
+      "title": "Fazer Artesanato",
+      "benefits": [
+        "Estimula a criatividade",
+        "Melhora a coordenação motora",
+        "Reduz o estresse",
+        "Proporciona satisfação ao criar algo único"
+      ],
+      "description": "O artesanato é uma forma de expressão criativa e relaxante. Seja costurando, fazendo bijuterias ou criando objetos decorativos, ele permite que você se conecte com a arte e com suas habilidades manuais.",
+      "category": "Artes"
+    },
+    {
+      "title": "Dançar",
+      "benefits": [
+        "Melhora a saúde cardiovascular",
+        "Desenvolve a coordenação motora",
+        "Aumenta a autoestima",
+        "Proporciona prazer e liberdade"
+      ],
+      "description": "A dança é uma excelente atividade física que combina exercício com expressão emocional. É divertida, energizante e pode ser praticada de forma solo ou em grupo.",
+      "category": "Atividade Física"
+    },
+    {
+      "title": "Fotografia",
+      "benefits": [
+        "Desenvolve a criatividade",
+        "Aumenta a observação do ambiente",
+        "Proporciona prazer e realização",
+        "Ajuda a registrar memórias"
+      ],
+      "description": "A fotografia é uma forma de arte e de registro. Capturar momentos importantes ou simplesmente explorar a beleza do mundo pode ser uma experiência muito gratificante.",
+      "category": "Artes"
+    },
+    {
+      "title": "Fazer Piquenique",
+      "benefits": [
+        "Conecta-se com a natureza",
+        "Promove a socialização",
+        "Reduz o estresse",
+        "Proporciona prazer ao ar livre"
+      ],
+      "description": "Um piquenique ao ar livre é uma maneira descontraída de aproveitar a natureza e compartilhar bons momentos com amigos ou família.",
+      "category": "Bem-Estar"
+    },
+    {
+      "title": "Caminhar na Praia",
+      "benefits": [
+        "Melhora a saúde cardiovascular",
+        "Proporciona relaxamento",
+        "Aumenta o bem-estar mental",
+        "Conecta-se com a natureza"
+      ],
+      "description": "Caminhar na praia oferece uma experiência sensorial única, com o som das ondas e o contato com a areia, além de ser uma ótima forma de exercício.",
+      "category": "Atividade Física"
+    },
+    {
+      "title": "Escrever em um Diário",
+      "benefits": [
+        "Ajuda a organizar pensamentos",
+        "Reduz a ansiedade",
+        "Aumenta a clareza mental",
+        "Melhora a autoestima"
+      ],
+      "description": "Escrever em um diário é uma prática terapêutica que permite expressar sentimentos e refletir sobre o dia a dia. É uma ótima ferramenta para autoconhecimento e redução do estresse.",
+      "category": "Bem-Estar"
+    },
+    {
+      "title": "Jogar Videogame",
+      "benefits": [
+        "Melhora a coordenação motora",
+        "Estimula o raciocínio lógico",
+        "Proporciona entretenimento",
+        "Pode ser uma forma de socialização"
+      ],
+      "description": "Jogar videogame é uma atividade que mistura diversão, habilidades cognitivas e muitas vezes interação social, especialmente com jogos multiplayer.",
+      "category": "Entretenimento"
+    },
+    {
+      "title": "Piquenique Noturno",
+      "benefits": [
+        "Relaxamento e tranquilidade",
+        "Promoção da socialização",
+        "Desfrute de uma nova perspectiva da natureza",
+        "Estímulo ao convívio em grupo"
+      ],
+      "description": "Um piquenique à noite oferece uma experiência única, com um céu estrelado e o frescor da noite. É perfeito para uma noite tranquila com amigos ou familiares.",
+      "category": "Bem-Estar"
+    },
+    {
+      "title": "Costura",
+      "benefits": [
+        "Desenvolve habilidades manuais",
+        "Aumenta a concentração",
+        "Estimula a criatividade",
+        "Proporciona prazer ao criar"
+      ],
+      "description": "Costurar é uma habilidade prática e criativa. Além de permitir a confecção de peças únicas, a costura também é terapêutica e relaxante.",
+      "category": "Artes"
+    },
+    {
+      "title": "Ouvir Música",
+      "benefits": [
+        "Melhora o humor",
+        "Reduz o estresse",
+        "Aumenta a concentração",
+        "Proporciona prazer e relaxamento"
+      ],
+      "description": "Ouvir música é uma das formas mais universais de lazer e relaxamento. Ela pode melhorar o humor, aliviar tensões e até estimular a criatividade.",
+      "category": "Música"
     }
   ]
 }
-
