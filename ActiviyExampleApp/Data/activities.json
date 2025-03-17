@@ -1,0 +1,105 @@
+{
+  "activities": [
+    {
+      "title": "Caminhada ao Ar Livre",
+      "benefits": [
+        "Melhora a saúde cardiovascular",
+        "Reduz o estresse",
+        "Aumenta a disposição",
+        "Promove o bem-estar mental"
+      ],
+      "description": "A caminhada ao ar livre é uma excelente forma de se conectar com a natureza e cuidar da saúde. Pode ser feita em qualquer lugar, seja na cidade ou no campo, e é uma atividade de baixo impacto."
+    },
+    {
+      "title": "Leitura de Livros",
+      "benefits": [
+        "Estimula a mente",
+        "Melhora o vocabulário",
+        "Reduz o estresse",
+        "Amplia o conhecimento"
+      ],
+      "description": "A leitura é uma atividade que estimula a mente e pode ser uma excelente forma de escape. Além de entreter, ela ajuda a expandir horizontes e a melhorar a capacidade cognitiva."
+    },
+    {
+      "title": "Prática de Yoga",
+      "benefits": [
+        "Aumenta a flexibilidade",
+        "Melhora o equilíbrio",
+        "Reduz a ansiedade",
+        "Contribui para o bem-estar físico e mental"
+      ],
+      "description": "O yoga é uma prática milenar que combina exercícios físicos, controle da respiração e meditação. É ótimo para quem busca relaxamento e fortalecimento ao mesmo tempo."
+    },
+    {
+      "title": "Jardinagem",
+      "benefits": [
+        "Conecta-se com a natureza",
+        "Reduz o estresse",
+        "Melhora a saúde mental",
+        "Proporciona uma sensação de realização"
+      ],
+      "description": "A jardinagem envolve cuidar das plantas, o que pode ser muito terapêutico. Além de embelezar o ambiente, ela traz benefícios à saúde mental e promove a sensação de cuidado e conquista."
+    },
+    {
+      "title": "Ciclismo",
+      "benefits": [
+        "Melhora a saúde cardiovascular",
+        "Fortalece os músculos",
+        "Proporciona uma atividade ao ar livre",
+        "Contribui para o bem-estar emocional"
+      ],
+      "description": "O ciclismo é uma atividade que pode ser feita em diferentes níveis de intensidade. Além de ser uma ótima forma de transporte, ele também melhora a condição física e proporciona uma sensação de liberdade."
+    },
+    {
+      "title": "Pintura ou Desenho",
+      "benefits": [
+        "Estimula a criatividade",
+        "Melhora a coordenação motora",
+        "Reduz o estresse",
+        "Promove a expressão pessoal"
+      ],
+      "description": "A pintura e o desenho são formas artísticas de expressão que ajudam a liberar emoções. Elas também estimulam a criatividade e permitem que você se conecte consigo mesmo."
+    },
+    {
+      "title": "Meditação",
+      "benefits": [
+        "Reduz a ansiedade",
+        "Melhora a concentração",
+        "Traz clareza mental",
+        "Promove o equilíbrio emocional"
+      ],
+      "description": "A meditação é uma prática de relaxamento e foco mental, muito utilizada para reduzir o estresse e melhorar a saúde emocional. Pode ser feita de forma guiada ou de maneira independente."
+    },
+    {
+      "title": "Assistir a Filmes ou Séries",
+      "benefits": [
+        "Proporciona entretenimento",
+        "Ajuda a relaxar",
+        "Amplia a cultura",
+        "Pode ser uma forma de socialização"
+      ],
+      "description": "Assistir a filmes ou séries é uma maneira popular de lazer. Além de proporcionar diversão, pode ser uma forma de aprendizado e de vivenciar diferentes culturas e perspectivas."
+    },
+    {
+      "title": "Cozinhar Novas Receitas",
+      "benefits": [
+        "Estimula a criatividade",
+        "Promove a alimentação saudável",
+        "Oferece prazer",
+        "Pode ser uma atividade social"
+      ],
+      "description": "Cozinhar é uma atividade criativa que pode ser tanto um passatempo quanto uma habilidade útil. Experimentar novas receitas pode ser uma maneira divertida de explorar a culinária e melhorar a alimentação."
+    },
+    {
+      "title": "Jogar Jogos de Tabuleiro",
+      "benefits": [
+        "Estimula o raciocínio lógico",
+        "Promove a interação social",
+        "Ajuda a melhorar a comunicação",
+        "É uma atividade divertida para grupos"
+      ],
+      "description": "Jogos de tabuleiro são uma ótima maneira de passar o tempo com amigos e família. Além de serem muito divertidos, eles estimulam o pensamento estratégico e a cooperação."
+    }
+  ]
+}
+
