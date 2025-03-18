@@ -14,7 +14,7 @@ struct RandomActivityView: View {
     var body: some View {
         if let activity = vm.randomActivity {
             VStack(alignment: .leading,spacing: 30) {
-                Text("Olá bla bla bla.. que tal \(activity.title.lowercased())?")
+                Text("Olá \(vm.username).. que tal \(activity.title.lowercased())?")
                     .font(.title)
                     .fontWeight(.bold)
                 Text("Você sabia que \(activity.description.lowercased())")
