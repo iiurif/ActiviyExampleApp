@@ -11,7 +11,7 @@ import SwiftUI
 struct ActiviyExampleAppApp: App {
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            OnboardingView()
         }
     }
 }
