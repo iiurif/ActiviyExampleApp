@@ -11,13 +11,14 @@ struct OnboardingPageThree : View {
     
     @Binding var screen : ScreenState
     @State var username : String = ""
+    @State var showButton : Bool = false
     
     var body : some View {
         ZStack {
             VStack {
                 Image("onboard3")
                     .resizable()
-                    .frame(width: 250,height: 350)
+                    .frame(width: 250,height: 385)
                     .scaledToFit()
                 
                 HStack {
@@ -26,16 +27,21 @@ struct OnboardingPageThree : View {
                         .frame(height: 55)
                         .overlay {
                             HStack {
-                                TextField("Digite aqui..", text: $username)
+                                TextField("", text: $username, prompt: Text("Digite aqui...").foregroundColor(.black).fontWeight(.bold))
+                                    .foregroundStyle(.black)
                                     .padding(.leading,10)
                             }
                         }.padding()
                     
                     if self.username != "" {
-                        circleButton
+                        withAnimation(.easeInOut(duration: 1.0)) {
+                            circleButton
+                        }
                     }
                 }
             }
+        }.onTapGesture {
+            self.endTextEditing()
         }
     }
     
@@ -46,12 +52,13 @@ struct OnboardingPageThree : View {
             screen = .three
         } label: {
             Circle()
-                .foregroundStyle(.background)
+                .foregroundStyle(.white)
                 .frame(width: 53, height: 53, alignment: .center)
                 .padding(.trailing)
                 .overlay {
                     Image(systemName: "chevron.right")
                         .font(.title2)
+                        .foregroundStyle(Color.brown)
                         .offset(x:-8)
                 }
         }

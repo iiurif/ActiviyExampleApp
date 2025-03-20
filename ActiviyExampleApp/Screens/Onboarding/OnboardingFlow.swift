@@ -7,25 +7,6 @@
 
 import SwiftUI
 
-//struct OnboardingFlow : View {
-//    
-//    @State var procced : Bool = false
-//    
-//    var body: some View {
-//        ZStack {
-//            Color.brown.opacity(0.3)
-//                .ignoresSafeArea()
-//            if procced == false {
-//                OnboardPageTwo(procced: $procced)
-//                   
-//            } else {
-//                OnboardingPageThree()
-//                    .transition(.move(edge: .trailing))
-//            }
-//        }
-//    }
-//}
-
 enum ScreenState {
     case one
     case two

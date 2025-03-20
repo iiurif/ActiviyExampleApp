@@ -15,7 +15,7 @@ struct OnboardingPageFour: View {
         VStack {
             Image("cat_blank")
                 .resizable()
-                .frame(width: 250,height: 350)
+                .frame(width: 250,height: 380)
                 .overlay {
                     VStack {
                         Text("Olá \(User.shared.name)!")
