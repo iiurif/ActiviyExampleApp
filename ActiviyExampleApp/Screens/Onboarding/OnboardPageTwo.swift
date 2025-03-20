@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardPageTwo: View {
     
-    @Binding var procced : Bool
+    @Binding var screen : ScreenState
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct OnboardPageTwo: View {
                 
                 AppButton(text: "Seguir") {
                     withAnimation {
-                        procced.toggle()
+                        screen = .two
                     }
                 }
                 .padding(.horizontal,20)

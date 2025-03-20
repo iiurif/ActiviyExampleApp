@@ -25,7 +25,7 @@ struct OnboardingView: View {
                 splash.toggle()
             }
         }.fullScreenCover(isPresented: $splash) {
-            OnboardingFlow()
+            OnboardingFlow(screen: .one)
         }
     }
 }
