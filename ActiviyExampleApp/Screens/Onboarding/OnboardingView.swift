@@ -1,9 +1,13 @@
-//
-//  OnboardingView.swift
-//  ActiviyExampleApp
-//
 //  Created by User on 18/03/25.
-//
+
+
+/*
+ 
+ Primeira página do aplicativo)
+ Essa pagina contem a apresentação do aplicativo e ja direciona ele para o fluxo de telas do arquivo
+ OnboardingFlow.
+ 
+ */
 
 import SwiftUI
 
@@ -25,7 +29,7 @@ struct OnboardingView: View {
                 splash.toggle()
             }
         }.fullScreenCover(isPresented: $splash) {
-            OnboardingFlow(screen: .one)
+            OnboardingFlow(screen: .zero)
         }
     }
 }

@@ -9,7 +9,7 @@ struct ActivityResponse : Codable {
     let activities : [Activity]
 }
 
-struct Activity : Identifiable,Codable {
+struct Activity : Identifiable, Codable {
     var id : String {
         return self.title
     }

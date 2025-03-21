@@ -12,7 +12,7 @@ struct OnboardPageTwo: View {
     @Binding var screen : ScreenState
     
     var body: some View {
-        ZStack {
+        NavigationStack {
             VStack {
                 Image("catboard1")
                     .resizable()
@@ -25,6 +25,19 @@ struct OnboardPageTwo: View {
                     }
                 }
                 .padding(.horizontal,20)
+            }
+            .toolbar{
+                ToolbarItem(placement: .cancellationAction)
+                {
+                    Button {
+                        screen = .zero
+                    } label: {
+                        Image(systemName: "arrow")
+                        Text("Voltar")
+                            .foregroundColor(.black)
+                    }
+
+                }
             }
         }
     }

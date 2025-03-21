@@ -14,7 +14,7 @@ struct OnboardingPageThree : View {
     @State var showButton : Bool = false
     
     var body : some View {
-        ZStack {
+        NavigationStack{
             VStack {
                 Image("onboard3")
                     .resizable()
@@ -39,9 +39,19 @@ struct OnboardingPageThree : View {
                         }
                     }
                 }
+            }.onTapGesture {
+                self.endTextEditing()
             }
-        }.onTapGesture {
-            self.endTextEditing()
+            .toolbar{
+                ToolbarItem(placement: .cancellationAction){
+                    Button {
+                        screen = .two
+                    } label: {
+                        Text("Voltar")
+                    }
+
+                }
+            }
         }
     }
     
