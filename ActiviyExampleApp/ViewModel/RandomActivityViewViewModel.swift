@@ -12,9 +12,12 @@ class RandomActivityViewViewModel : ObservableObject {
     @Published var activityList : [Activity] = []
     @Published var randomActivity : Activity? = nil
     
+    @Published var username : String = ""
+    
     init() {
         loadActivities()
         getRandomActivity()
+        self.username = User.shared.name
     }
     
     func loadActivities() {
