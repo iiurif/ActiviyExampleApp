@@ -14,6 +14,7 @@ struct AppExplanation: View {
     var body: some View {
         VStack{
             Text("Finalmente fazendo algo sua inutil")
+            Text("Não diga isso, ta todo mundo igual ! Você é massa !")
             Button {
                 screen = .one
             } label: {

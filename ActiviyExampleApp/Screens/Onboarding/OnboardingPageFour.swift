@@ -13,9 +13,7 @@ struct OnboardingPageFour: View {
     
     var body: some View {
         VStack {
-            Image("cat_blank")
-                .resizable()
-                .frame(width: 250,height: 380)
+            Image("blank_cat")
                 .overlay {
                     VStack {
                         Text("Olá \(User.shared.name)!")
@@ -25,7 +23,7 @@ struct OnboardingPageFour: View {
                     }
                     .font(.body)
                     .fontWeight(.bold)
-                    .foregroundStyle(Color.brown)
+                    .foregroundStyle(Color.black)
                     .offset(y:25)
                 }
             
