@@ -20,17 +20,4 @@ class User {
     func setName(_ name: String) {
         self.name = name
     }
-    
-    func addActivity(
-        categorie: String,
-        title: String,
-        benefits: [String],
-        description: String)
-    {
-        let newActivity = Activity(category: categorie,
-                                   title: title,
-                                   benefits: benefits,
-                                   description: description)
-        self.activities.append(newActivity)
-    }
 }

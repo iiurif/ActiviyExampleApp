@@ -13,7 +13,7 @@ struct SwipeCardView: View {
     
     var body: some View {
         ZStack {
-            Color.black
+            Color.white
                 .ignoresSafeArea()
             ZStack {
                 ForEach(vm.activityList) { activity in
@@ -27,7 +27,7 @@ struct SwipeCardView: View {
         }
     }
     
-    private func removeCard(_ card: Activity) {
+    private func removeCard(_ card: RandomActivity) {
         vm.activityList.removeAll { $0.id == card.id }
     }
 }

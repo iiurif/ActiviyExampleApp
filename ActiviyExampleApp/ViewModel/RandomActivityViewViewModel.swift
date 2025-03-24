@@ -9,8 +9,8 @@ import Foundation
 
 class RandomActivityViewViewModel : ObservableObject {
     
-    @Published var activityList : [Activity] = []
-    @Published var randomActivity : Activity? = nil
+    @Published var activityList : [RandomActivity] = []
+    @Published var randomActivity : RandomActivity? = nil
     
     @Published var username : String = ""
     
@@ -24,7 +24,7 @@ class RandomActivityViewViewModel : ObservableObject {
         guard let activity = Bundle.main.url(forResource: "activities", withExtension: "json") else { return }
         do {
             let jsonData = try Data(contentsOf: activity)
-            let result = try JSONDecoder().decode(ActivityResponse.self, from: jsonData)
+            let result = try JSONDecoder().decode(RandomActivityResponse.self, from: jsonData)
             self.activityList = result.activities
         } catch {
             print("\(error)")
