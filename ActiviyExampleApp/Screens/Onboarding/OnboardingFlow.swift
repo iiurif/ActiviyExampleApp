@@ -14,7 +14,7 @@ enum ScreenState {
 
 struct OnboardingFlow: View {
     
-    @State private var screen: ScreenState = .zero
+    @State var screen: ScreenState
     
     var body: some View {
         ZStack {
