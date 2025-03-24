@@ -11,7 +11,6 @@ enum ScreenState {
     case one
     case two
     case three
-    case four
 }
 
 struct OnboardingFlow : View {
@@ -20,7 +19,7 @@ struct OnboardingFlow : View {
     
     var body: some View {
         ZStack {
-            Color.brown.opacity(0.3)
+            Color.fundoDefault
                 .ignoresSafeArea()
                 
             switch screen {
@@ -34,10 +33,7 @@ struct OnboardingFlow : View {
                 OnboardingPageThree(screen: $screen)
                     .transition(.move(edge: .leading))
             case .three:
-                OnboardingPageFour(screen: $screen)
-                    .transition(.opacity)
-            case .four:
-                HomeView()
+                MenuPage(screen: $screen)
                     .transition(.opacity)
             }
         }
@@ -45,5 +41,5 @@ struct OnboardingFlow : View {
 }
 
 #Preview {
-    //OnboardingFlow()
+    OnboardingFlow(screen: .three)
 }
