@@ -15,62 +15,73 @@ struct OnboardingPageThree : View {
     
     var body : some View {
         NavigationStack{
-            VStack {
-                Image("onboard3")
-                    .resizable()
-                    .frame(width: 250,height: 385)
-                    .scaledToFit()
-                
-                HStack {
+            ZStack{
+                Color.fundoDefault
+                    .ignoresSafeArea()
+                VStack(spacing: 30) {
+                    Image("CatAsksName")
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundStyle(Color.white)
                         .frame(height: 55)
                         .overlay {
                             HStack {
-                                TextField("", text: $username, prompt: Text("Digite aqui...").foregroundColor(.black).fontWeight(.bold))
+                                TextField("", text: $username, prompt: Text("Digite aqui...").foregroundColor(.black))
                                     .foregroundStyle(.black)
-                                    .padding(.leading,10)
+                                    .padding(.leading, 10)
+                            } //HStack
+                        }
+                    if self.username == "" {
+                        AppButton(text: "Seguir", disable: true) {
+                            withAnimation {
+                                screen = .three
                             }
-                        }.padding()
-                    
-                    if self.username != "" {
-                        withAnimation(.easeInOut(duration: 1.0)) {
-                            circleButton
+                        }
+                        .disabled(true)
+                    } else {
+                        AppButton(text: "Seguir") {
+                            withAnimation {
+                                screen = .three
+                            }
                         }
                     }
+                
+                }//VStack
+                .padding(.horizontal, 30)
+                .onTapGesture {
+                    self.endTextEditing()
                 }
-            }.onTapGesture {
-                self.endTextEditing()
-            }
-            .toolbar{
-                ToolbarItem(placement: .cancellationAction){
-                    Button {
-                        screen = .two
-                    } label: {
-                        Text("Voltar")
-                    }
+                .toolbar{
+                    ToolbarItem(placement: .cancellationAction)
+                    {
+                        Button {
+                            screen = .one
+                        } label: {
+                            Image(systemName:"chevron.compact.backward")
+                            Text("Voltar")
+                                .font(.system(size: 22))
+                        }
 
+                    }
                 }
+            } //VStack
+            } // ZStack
+        } // NavigationStack
+        private var circleButton : some View {
+            
+            Button {
+                User.shared.setName(username)
+                screen = .three
+            } label: {
+                Circle()
+                    .foregroundStyle(.white)
+                    .frame(width: 53, height: 53, alignment: .center)
+                    .padding(.trailing)
+                    .overlay {
+                        Image(systemName: "chevron.right")
+                            .font(.title2)
+                            .foregroundStyle(Color.brown)
+                            .offset(x:-8)
             }
-        }
-    }
-    
-    private var circleButton : some View {
-        
-        Button {
-            User.shared.setName(username)
-            screen = .three
-        } label: {
-            Circle()
-                .foregroundStyle(.white)
-                .frame(width: 53, height: 53, alignment: .center)
-                .padding(.trailing)
-                .overlay {
-                    Image(systemName: "chevron.right")
-                        .font(.title2)
-                        .foregroundStyle(Color.brown)
-                        .offset(x:-8)
-                }
         }
     }
 }

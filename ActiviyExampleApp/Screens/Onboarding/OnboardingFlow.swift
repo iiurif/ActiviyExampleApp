@@ -8,7 +8,8 @@
 import SwiftUI
 
 enum ScreenState {
-    case zero, one, two, three, four
+
+    case zero, one, two, three
 }
 
 struct OnboardingFlow: View {
@@ -17,7 +18,7 @@ struct OnboardingFlow: View {
     
     var body: some View {
         ZStack {
-            Color.brown.opacity(0.3)
+            Color.fundoDefault
                 .ignoresSafeArea()
             
             switch screen {
@@ -31,16 +32,13 @@ struct OnboardingFlow: View {
                 OnboardingPageThree(screen: $screen)
                     .transition(.move(edge: .trailing))
             case .three:
-                OnboardingPageFour(screen: $screen)
-            case .four:
-                NavigationStack {
-                    HomeView()
-                }
+                MenuPage(screen: $screen)
+                    .transition(.opacity)
             }
         }
     }
 }
 
 #Preview {
-    OnboardingFlow()
+    OnboardingFlow(screen: .three)
 }

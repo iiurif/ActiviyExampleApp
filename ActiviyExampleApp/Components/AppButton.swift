@@ -11,6 +11,7 @@ struct AppButton : View {
     
     let text: String
     var isDescructive : Bool = false
+    var disable : Bool = false
     let action : () -> ()
     
     var body: some View {
@@ -23,6 +24,7 @@ struct AppButton : View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 55)
                 .background(isDescructive ? Color.red : Color.brown)
+                .background(self.disable ? Color.gray : Color.brown)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
         }
     }

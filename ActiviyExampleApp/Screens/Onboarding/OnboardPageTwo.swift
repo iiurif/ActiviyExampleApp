@@ -13,18 +13,19 @@ struct OnboardPageTwo: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Image("catboard1")
-                    .resizable()
-                    .frame(width: 250,height: 350)
-                    .scaledToFit()
-                
-                AppButton(text: "Seguir") {
-                    withAnimation {
-                        screen = .two
+            ZStack{
+                Color.fundoDefault
+                    .ignoresSafeArea()
+                VStack {
+                    Image("CatPresentation")
+                    
+                    AppButton(text: "Seguir") {
+                        withAnimation {
+                            screen = .two
+                        }
                     }
+                    .padding(.horizontal,30)
                 }
-                .padding(.horizontal,20)
             }
             .toolbar{
                 ToolbarItem(placement: .cancellationAction)
@@ -32,9 +33,18 @@ struct OnboardPageTwo: View {
                     Button {
                         screen = .zero
                     } label: {
-                        Image(systemName: "arrow")
+                        Image(systemName:"chevron.compact.backward")
                         Text("Voltar")
-                            .foregroundColor(.black)
+                            .font(.system(size: 22))
+                    }
+
+                }
+                ToolbarItem(placement: .confirmationAction){
+                    Button {
+                        screen = .two
+                    } label: {
+                        Text("Pular")
+                            .font(.system(size: 22))
                     }
 
                 }
@@ -44,5 +54,5 @@ struct OnboardPageTwo: View {
 }
 
 #Preview {
-    //OnboardPageTwo()
+    OnboardPageTwo(screen: .constant(.two))
 }
