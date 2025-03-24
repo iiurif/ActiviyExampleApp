@@ -13,20 +13,28 @@ import SwiftUI
 
 struct OnboardingView: View {
     
-    @State var splash: Bool = false
+    @State var isActive: Bool = false
     
     var body: some View {
         ZStack {
             Color.fundoDefault
                 .ignoresSafeArea()
-            
+            if isActive {
+                OnboardingFlow()
+                    .transition(.move(edge: .top))
+            } else {
+                Image("logo")
+                    .resizable()
+                    .frame(width: 200,height: 250)
+                    .scaledToFit()
+            }
             Image("AppLogo")
         }.onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                splash.toggle()
+                withAnimation {
+                    isActive.toggle()
+                }
             }
-        }.fullScreenCover(isPresented: $splash) {
-            OnboardingFlow(screen: .zero)
         }
     }
 }

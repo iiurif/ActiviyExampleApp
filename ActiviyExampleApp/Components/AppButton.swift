@@ -10,6 +10,7 @@ import SwiftUI
 struct AppButton : View {
     
     let text: String
+    var isDescructive : Bool = false
     var disable : Bool = false
     let action : () -> ()
     
@@ -22,6 +23,7 @@ struct AppButton : View {
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
                 .frame(height: 55)
+                .background(isDescructive ? Color.red : Color.brown)
                 .background(self.disable ? Color.gray : Color.brown)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
         }

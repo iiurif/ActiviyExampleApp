@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Card : View {
     
-    let card : Activity
+    let card : RandomActivity
     var onRemove: () -> Void
     
     @State private var offset: CGSize = .zero
@@ -17,7 +17,7 @@ struct Card : View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 12)
-            .foregroundStyle(.teal)
+            .foregroundStyle(Color.init(red: 237 / 255, green: 210 / 255, blue: 184 / 255))
             .frame(height: UIScreen.main.bounds.size.height * 0.7)
             .padding()
             .overlay {
@@ -34,6 +34,7 @@ struct Card : View {
                         .frame(width: 335)
                 }
             }
+            .shadow(radius: 1)
             .offset(x: offset.width, y: offset.height)
             .rotationEffect(.degrees(rotation))
             .gesture(
@@ -69,7 +70,7 @@ struct Card : View {
 }
 
 #Preview {
-    Card(card: Activity(category: "Lúdico", title: "Passear", benefits: [""], description: "Passer passear passear passear passear passear passear passear passear passear passear passear passear")) {
+    Card(card: RandomActivity(category: "Lúdico", title: "Passear", benefits: [""], description: "Passer passear passear passear passear passear passear passear passear passear passear passear passear")) {
         
     }
 }
