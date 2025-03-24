@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "blank_cat.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
