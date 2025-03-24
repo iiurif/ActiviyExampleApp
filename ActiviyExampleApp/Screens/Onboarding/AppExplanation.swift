@@ -12,13 +12,31 @@ struct AppExplanation: View {
     @Binding var screen: ScreenState
     
     var body: some View {
-        VStack{
-            Text("Finalmente fazendo algo sua inutil")
-            Text("Não diga isso, ta todo mundo igual ! Você é massa !")
-            Button {
-                screen = .one
-            } label: {
-                Text("Avançar")
+        NavigationStack{
+            ZStack{
+                Color.fundoDefault
+                    .ignoresSafeArea()
+                VStack{
+                    Image("CatExplanation")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    AppButton(text: "Seguir") {
+                        withAnimation {
+                            screen = .one
+                        }
+                    }
+                    .padding(.horizontal, 30)
+                }//VStack
+            }
+            .toolbar{
+                ToolbarItem(placement: .confirmationAction){
+                    Button {
+                        screen = .two
+                    } label: {
+                        Text("Pular")
+                            .font(.system(size: 22))
+                    }
+                }
             }
         }
         
@@ -26,5 +44,5 @@ struct AppExplanation: View {
 }
 
 #Preview {
-   //AppExplanation()
+   AppExplanation(screen: .constant(.zero))
 }
