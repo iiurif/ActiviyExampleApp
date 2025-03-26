@@ -26,21 +26,29 @@ struct HomeView : View {
     
     var body: some View {
         ZStack {
-            Color.appBackground
+            Color.ballons
                 .ignoresSafeArea(.all, edges: .bottom)
             
                 VStack {
                     categoryMenu
                         .padding(.top,5)
                     
-                    activityListView
-                        .opacity(activities.isEmpty ? 0.0 : 1.0)
+                    if !filteredActivities.isEmpty {
+                        activityListView
+                            .opacity(activities.isEmpty ? 0.0 : 1.0)
+                    } else {
+                        Spacer()
+                        emptyActivity
+                        Spacer()
+    
+                    }
+                    
                     
                 }
                 .searchable(text: $searchActivity, prompt: "Pesquise aqui sua atividade")
             
             .navigationTitle("Atividades")
-            .navigationBarTitleDisplayMode(.automatic)
+            .navigationBarTitleDisplayMode(.large)
             .toolbar {
 
                 ToolbarItem(placement: .confirmationAction) {
@@ -70,12 +78,11 @@ struct HomeView : View {
                         selectedCategory = category
                     }) {
                         Text(category.description)
-                            .foregroundStyle(selectedCategory == category ? .white : .black)
-                            .fontWeight(.bold)
+                            .foregroundStyle(selectedCategory == category ? Color.white : Color.accent)
                             .padding(.horizontal)
-                            .frame(height: 35)
-                            .background(selectedCategory == category ? .black : Color.brown.opacity(0.3))
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            .frame(height: 52)
+                            .background(selectedCategory == category ? Color.accent : Color.piker)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                 }
             }.padding()
@@ -87,10 +94,12 @@ struct HomeView : View {
             Section("Atividades Pendentes") {
                 ForEach(filteredActivities.filter { !$0.isDone }) { activity in
                     RoundedRectangle(cornerRadius: 12)
-                        .foregroundStyle(Color.brown)
+                        .frame(width: 359, height: 67)
+                        .foregroundStyle(Color.cards)
+                        .shadow(radius: 5, x: 0, y: 2)
                         .overlay {
                             Text(activity.title)
-                                .foregroundStyle(.white)
+                                .foregroundStyle(Color.accentColor)
                         }
                 }
             }
@@ -100,10 +109,12 @@ struct HomeView : View {
             Section("Atividades Concluídas") {
                 ForEach(filteredActivities.filter { $0.isDone }) { activity in
                     RoundedRectangle(cornerRadius: 12)
-                        .foregroundStyle(.brown)
+                        .frame(width: 359, height: 67)
+                        .foregroundStyle(.gray)
+                        .shadow(radius: 5, x: 0, y: 3)
                         .overlay {
                             Text(activity.title)
-                                .foregroundStyle(.white)
+                                .foregroundStyle(Color.white)
                         }
                 }
             }
@@ -113,18 +124,24 @@ struct HomeView : View {
         .scrollContentBackground(.hidden)
     }
     private var emptyActivity: some View {
-        RoundedRectangle(cornerRadius: 12)
-            .frame(height: UIScreen.main.bounds.size.height * 0.2)
-            .foregroundStyle(.background.opacity(0.6))
-            .padding(.horizontal,50)
-            .overlay {
-                VStack {
-                    Text(selectedCategory.emptyDescription)
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .padding(.horizontal,55)
-                }
+        VStack {
+            if selectedCategory == .ludico{
+                Image("0ludico")
+                    .padding(10)
             }
+            if selectedCategory == .criativos{
+                Image("0criativo")
+                    .padding(10)
+            }
+            if selectedCategory == .esportivos{
+                Image("0esportivo")
+                    .padding(10)
+            }
+            if selectedCategory == .outros{
+                Image("0outros")
+                    .padding(10)
+            }
+        }//VStack
     }
     
 }

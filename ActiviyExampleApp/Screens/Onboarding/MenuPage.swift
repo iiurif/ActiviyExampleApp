@@ -30,7 +30,7 @@ struct MenuPage: View {
                         Image("MenuCat")
                             .offset(y: 30)
                             .zIndex(1)
-                        Text("Olá \(nome ?? "Fulano")! O que você deseja fazer agora?")
+                        Text("Olá \(nome ?? "Amigo/a")! O que você deseja fazer agora?")
                             .foregroundStyle(.accent)
                             .fontWeight(.bold)
                             .frame(width: 248)
