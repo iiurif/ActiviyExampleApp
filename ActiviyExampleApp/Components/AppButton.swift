@@ -1,19 +1,26 @@
-//
-//  AppButton.swift
-//  ActiviyExampleApp
-//
-//  Created by User on 17/03/25.
-//
-
 import SwiftUI
 
-struct AppButton : View {
+struct AppButton: View {
     
     let text: String
-    var isDescructive : Bool = false
-    var disable : Bool = false
-    let action : () -> ()
+    var isDescructive: Bool = false
+    var disable: Bool = false
+    let action: () -> ()
     
+    init(text: String, action: @escaping () -> (), isDescructive: Bool = false, disable: Bool = false) {
+        self.text = text
+        self.action = action
+        self.isDescructive = isDescructive
+        self.disable = disable
+    }
+    
+    init(text: String, action: @escaping () -> (), isDescructive: Bool) {
+        self.text = text
+        self.action = action
+        self.isDescructive = isDescructive
+        self.disable = false
+    }
+
     var body: some View {
         Button {
             action()
@@ -27,5 +34,7 @@ struct AppButton : View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .shadow(radius: self.disable ? 0 : 2, x: self.disable ? 0 : 2, y: self.disable ? 0 : 2)
         }
+        .disabled(disable)
     }
 }
+

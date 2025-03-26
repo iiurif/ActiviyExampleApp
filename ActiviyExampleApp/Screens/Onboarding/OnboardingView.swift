@@ -24,6 +24,10 @@ struct OnboardingView: View {
                     .transition(.move(edge: .top))
             } else {
                 Image("AppLogo")
+                    .resizable()
+                    .frame(width: 200,height: 250)
+                    .scaledToFit()
+            }
             }
         }.onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
