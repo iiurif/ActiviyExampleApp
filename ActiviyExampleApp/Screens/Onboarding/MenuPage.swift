@@ -15,19 +15,36 @@ struct MenuPage: View {
     
     var body: some View {
         ZStack{
-            VStack{
-                ZStack{
+            VStack(spacing: 40){
+                VStack{
                     Image("MenuCat")
-                    Text("Olá Fulano! Como Irá aproveitar seu tempo livre hoje?")
-                }.padding(.bottom, 15)
-                AppButton(text: "Aceitar Sugestão Aleatória"){
+                        .offset(y: 30)
+                        .zIndex(1)
+                    Text("Olá Fulano! O que você deseja fazer agora?")
+                        .foregroundStyle(.accent)
+                        .fontWeight(.bold)
+                        .frame(width: 248)
+                        .padding(40)
+                        .background(Color.ballons)
+                        .clipShape(RoundedRectangle(cornerRadius: 72))
+                } //VStack
+                
+                VStack{
+                    AppButton(text: "Aceitar sugestões aleatórias"){
+                        withAnimation {
+                            screen = .one
+                        }
+                    }
+                    .padding(.vertical, 10)
                     
-                }.padding(.bottom, 5)
-                AppButton(text: "Acessar Atividades"){
-                    
-                }
+                    AppButton(text: "Acessar Atividades"){
+                        withAnimation {
+                            screen = .one
+                        }
+                    }
+                } //VSatck
+                .padding(.horizontal, 30)
             }
-            .padding(.horizontal, 30)
         }
     }
 }

@@ -46,18 +46,3 @@ struct AppExplanation: View {
 #Preview {
    AppExplanation(screen: .constant(.zero))
 }
-
-#Preview {
-    VStack(spacing: 0) {
-        Circle()
-            .frame(height: 100)
-            .offset(y: 40)
-            .zIndex(1)
-        Text("sadjjklkllkjkllkjkljkljlkjlkjkljkljlkjlklkjlkjlkjlkjljlkjlkjlkjkljklljljlkjkllkjlkjkljlkjkljlkjlksaddasdasdadasdddad")
-            .padding()
-            .background(.red)
-            .padding()
-        Rectangle()
-            .frame(width: 10)
-    }
-}
