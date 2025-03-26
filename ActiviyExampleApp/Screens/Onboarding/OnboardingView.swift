@@ -28,7 +28,6 @@ struct OnboardingView: View {
                     .frame(width: 200,height: 250)
                     .scaledToFit()
             }
-            }
         }.onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {

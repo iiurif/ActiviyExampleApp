@@ -1,15 +1,11 @@
-//
-//  ActiviyExampleAppApp.swift
-//  ActiviyExampleApp
-//
-//  Created by Iuri Ferreira on 17/03/25.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
 struct ActiviyExampleAppApp: App {
+    
+    // Using @AppStorage to store and persist the "primeiroAcesso" value
+    @AppStorage("primeiroAcesso") var firstAccess: Bool = true
     
     var sharedModelContainer: ModelContainer = {
         do {
@@ -22,9 +18,16 @@ struct ActiviyExampleAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
-                .modelContainer(sharedModelContainer)
-                .preferredColorScheme(.light)
+            if firstAccess {
+                OnboardingView()
+                    .modelContainer(sharedModelContainer)
+                    .preferredColorScheme(.light)
+            } else {
+                MenuPage()
+                    .modelContainer(sharedModelContainer)
+                    .preferredColorScheme(.light)
+            }
         }
     }
 }
+

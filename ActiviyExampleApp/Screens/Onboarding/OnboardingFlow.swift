@@ -32,7 +32,8 @@ struct OnboardingFlow: View {
                 OnboardingPageThree(screen: $screen)
                     .transition(.move(edge: .trailing))
             case .three:
-                MenuPage(screen: $screen)
+                
+                MenuPage()
                     .transition(.opacity)
             }
         }
@@ -40,5 +41,5 @@ struct OnboardingFlow: View {
 }
 
 #Preview {
-    OnboardingFlow()
+    OnboardingFlow(screen: .one)
 }

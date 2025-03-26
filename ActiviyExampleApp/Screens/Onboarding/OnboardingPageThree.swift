@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OnboardingPageThree : View {
     
+    @AppStorage("nome") var nome : String = ""
+    
     @Binding var screen : ScreenState
     @State var username : String = ""
     @State var showButton : Bool = false
@@ -37,6 +39,7 @@ struct OnboardingPageThree : View {
                     } else {
                         AppButton(text: "Seguir") {
                             withAnimation {
+                                self.nome = username
                                 screen = .three
                             }
                         }

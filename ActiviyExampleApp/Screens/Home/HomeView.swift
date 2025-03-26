@@ -57,6 +57,8 @@ struct HomeView : View {
             if activities.isEmpty {
                 emptyActivity
             }
+        }.onTapGesture {
+            self.endTextEditing()
         }
     }
     
@@ -105,6 +107,8 @@ struct HomeView : View {
                         }
                 }
             }
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
         }
         .scrollContentBackground(.hidden)
     }
