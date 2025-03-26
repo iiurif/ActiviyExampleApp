@@ -1,4 +1,3 @@
-//
 //  HomeView.swift
 //  ActiviyExampleApp
 //
@@ -6,64 +5,56 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeView : View {
     
     
-    @EnvironmentObject var activityViewModel : ActivityViewModel
+    @Environment(\.modelContext) private var modelContext
     
-    @State var selectedCategory : Category = .ludico
-    @State var addActivityView : Bool = false
-    @State var activities : [Activity] = []
-    @State var searchActivity: String = ""
+    @State private var selectedCategory: Category = .ludico
+    @State private var searchActivity: String = ""
+    @State private var showAddActivitySheet: Bool = false
     
-    @State var showAddActivitySheet : Bool = false
+    @Query private var activities: [Activity]
+    
+    private var filteredActivities: [Activity] {
+        activities
+            .filter { $0.category == selectedCategory }
+            .filter { searchActivity.isEmpty || $0.title.localizedCaseInsensitiveContains(searchActivity) }
+    }
     
     var body: some View {
         ZStack {
             Color.appBackground
                 .ignoresSafeArea(.all, edges: .bottom)
-            NavigationStack {
+            
                 VStack {
                     categoryMenu
                         .padding(.top,5)
                     
                     activityListView
-                        .opacity(activityViewModel.activities.isEmpty ? 0.0 : 1.0)
+                        .opacity(activities.isEmpty ? 0.0 : 1.0)
                     
                 }
                 .searchable(text: $searchActivity, prompt: "Pesquise aqui sua atividade")
-            }
+            
             .navigationTitle("Atividades")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .font(.body)
-                        Text("Voltar")
-                            .font(.body)
-                            .fontWeight(.bold)
-                    }
-                }
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button {
                         showAddActivitySheet.toggle()
                     } label: {
-                        Image(systemName: "plus.circle.fill")
-                            .font(.largeTitle)
-                            .foregroundStyle(Color.black)
-                            .padding(.top,40)
+                       Text("Adicionar")
                     }
                 }
             }
             .sheet(isPresented: $showAddActivitySheet) {
                 AddActivityView()
             }
-            if activityViewModel.activities.isEmpty {
+            if activities.isEmpty {
                 emptyActivity
             }
         }
@@ -89,38 +80,34 @@ struct HomeView : View {
         }
     }
     
-    private var activityListView : some View {
-        VStack {
-            List {
-                Section("") {
-                    ForEach(activityViewModel.activities) { activity in
-                        if !activity.isDone {
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundStyle(Color.brown)
-                                .overlay {
-                                    Text(activity.title)
-                                }
+    private var activityListView: some View {
+        List {
+            Section("Atividades Pendentes") {
+                ForEach(filteredActivities.filter { !$0.isDone }) { activity in
+                    RoundedRectangle(cornerRadius: 12)
+                        .foregroundStyle(Color.brown)
+                        .overlay {
+                            Text(activity.title)
+                                .foregroundStyle(.white)
                         }
-                    }
                 }
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-                
-                Section("Atividades Concluídas") {
-                    ForEach(activityViewModel.activities) { activity in
-                        if activity.isDone {
-                            RoundedRectangle(cornerRadius: 12)
-                                .foregroundStyle(.brown)
-                                .overlay {
-                                    Text(activity.title)
-                                }
+            }
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            
+            Section("Atividades Concluídas") {
+                ForEach(filteredActivities.filter { $0.isDone }) { activity in
+                    RoundedRectangle(cornerRadius: 12)
+                        .foregroundStyle(.brown)
+                        .overlay {
+                            Text(activity.title)
+                                .foregroundStyle(.white)
                         }
-                    }
                 }
-            }.scrollContentBackground(.hidden)
+            }
         }
+        .scrollContentBackground(.hidden)
     }
-    
     private var emptyActivity: some View {
         RoundedRectangle(cornerRadius: 12)
             .frame(height: UIScreen.main.bounds.size.height * 0.2)
@@ -138,10 +125,20 @@ struct HomeView : View {
     
 }
 
-#Preview {
-    NavigationStack {
-        HomeView()
-            .environmentObject(ActivityViewModel())
-    }
-}
-
+//#Preview {
+//    do {
+//        let modelContainer = try ModelContainer(
+//            for: Activity.self,
+//            configurations: ModelConfiguration(isStoredInMemoryOnly: true) // In-memory store
+//        )
+//        let modelContext = modelContainer.mainContext
+//        let viewModel = ActivityViewModel(modelContext: modelContext)
+//
+//        NavigationStack {
+//            HomeView()
+//                .environmentObject(viewModel)
+//        }
+//    } catch {
+//        Text("Failed to create preview: \(error.localizedDescription)")
+//    }
+//}

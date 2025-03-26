@@ -6,16 +6,24 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ActiviyExampleAppApp: App {
     
-    let activityViewModel : ActivityViewModel = ActivityViewModel()
+    var sharedModelContainer: ModelContainer = {
+        do {
+            let container = try ModelContainer(for: Activity.self) // ✅ Corrected
+            return container
+        } catch {
+            fatalError("❌ Failed to initialize ModelContainer: \(error)")
+        }
+    }()
     
     var body: some Scene {
         WindowGroup {
             OnboardingView()
-                .environmentObject(activityViewModel)
+                .modelContainer(sharedModelContainer)
                 .preferredColorScheme(.light)
         }
     }

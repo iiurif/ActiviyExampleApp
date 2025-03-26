@@ -1,33 +1,36 @@
-//
-//  OnboardingPageFour.swift
-//  ActiviyExampleApp
-//
-//  Created by Iuri Ferreira on 20/03/25.
-//
-
-//Pagina Para Segundo Acesso (Mudar nome urgente!!!!)
-
 import SwiftUI
 
 struct MenuPage: View {
     
-    @Binding var screen : ScreenState
+    @Binding var screen: ScreenState
+    @State private var navigateToHome = false // State to trigger navigation
     
     var body: some View {
-        ZStack{
-            VStack{
-                ZStack{
-                    Image("MenuCat")
-                    Text("Olá Fulano! Como Irá aproveitar seu tempo livre hoje?")
-                }.padding(.bottom, 15)
-                AppButton(text: "Aceitar Sugestão Aleatória"){
+        NavigationStack {
+            ZStack{
+                VStack{
+                    ZStack{
+                        Image("MenuCat")
+                        Text("Olá Fulano! Como Irá aproveitar seu tempo livre hoje?")
+                    }.padding(.bottom, 15)
                     
-                }.padding(.bottom, 5)
-                AppButton(text: "Acessar Atividades"){
+                    // NavigationLink wrapped around AppButton
+                    NavigationLink(destination: HomeView(), isActive: $navigateToHome) {
+                        AppButton(text: "Aceitar Sugestão Aleatória") {
+                            // Trigger the navigation
+                            
+                        }
+                    }
+                    .padding(.bottom, 5)
                     
+                    // Another button without navigation
+                    AppButton(text: "Acessar Atividades") {
+                        // Your other action here
+                        navigateToHome = true
+                    }
                 }
+                .padding(.horizontal, 30)
             }
-            .padding(.horizontal, 30)
         }
     }
 }

@@ -40,5 +40,5 @@ struct OnboardingFlow: View {
 }
 
 #Preview {
-    OnboardingFlow(screen: .three)
+    OnboardingFlow()
 }

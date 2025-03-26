@@ -8,22 +8,30 @@
 import SwiftUI
 import SwiftData
 
-@Observable
-class Activity : Identifiable {
-    var title : String
-    var description : String
-    var notes : String
-    var startDate : Date
-    var endDate : Date
-    var isDone : Bool
+@Model
+class Activity {
+    var title: String
+    var desc: String
+    var notes: String
+    var startDate: Date
+    var endDate: Date
+    var isDone: Bool
     
-    init(title: String, description: String, notes: String, startDate: Date, endDate: Date, isDone: Bool) {
+    private var categoryRawValue: String
+    
+    var category: Category {
+        get { Category(rawValue: categoryRawValue) ?? .outros }
+        set { categoryRawValue = newValue.rawValue }
+    }
+
+    init(title: String, description: String, notes: String, startDate: Date, endDate: Date, isDone: Bool, category: Category) {
         self.title = title
-        self.description = description
+        self.desc = description
         self.notes = notes
         self.startDate = startDate
         self.endDate = endDate
         self.isDone = isDone
+        self.categoryRawValue = category.rawValue
     }
 }
 

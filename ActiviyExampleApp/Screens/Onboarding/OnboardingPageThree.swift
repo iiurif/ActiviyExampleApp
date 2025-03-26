@@ -31,12 +31,9 @@ struct OnboardingPageThree : View {
                             } //HStack
                         }
                     if self.username == "" {
-                        AppButton(text: "Seguir", disable: true) {
-                            withAnimation {
-                                screen = .three
-                            }
-                        }
-                        .disabled(true)
+                        AppButton(text: "Seguir", action: {
+                            
+                        }, isDescructive: false, disable: true)
                     } else {
                         AppButton(text: "Seguir") {
                             withAnimation {
