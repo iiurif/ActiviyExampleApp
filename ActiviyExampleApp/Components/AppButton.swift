@@ -23,10 +23,9 @@ struct AppButton : View {
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
                 .frame(height: 55)
-                .background(isDescructive ? Color.red : Color.button)
-                .background(self.disable ? Color.gray : Color.button)
+                .background(self.disable ? Color.gray : (self.isDescructive ? Color.red : Color.button))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
-                .shadow(radius: 2, x: 0, y: 5)
+                .shadow(radius: self.disable ? 0 : 2, x: self.disable ? 0 : 2, y: self.disable ? 0 : 2)
         }
     }
 }

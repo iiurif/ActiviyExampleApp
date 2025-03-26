@@ -5,7 +5,6 @@
 //  Created by Iuri Ferreira on 20/03/25.
 //
 
-//Pagina Para Segundo Acesso (Mudar nome urgente!!!!)
 
 import SwiftUI
 
@@ -32,14 +31,14 @@ struct MenuPage: View {
                 VStack{
                     AppButton(text: "Aceitar sugestões aleatórias"){
                         withAnimation {
-                            screen = .one
+                            
                         }
                     }
                     .padding(.vertical, 10)
                     
                     AppButton(text: "Acessar Atividades"){
                         withAnimation {
-                            screen = .one
+                            
                         }
                     }
                 } //VSatck
