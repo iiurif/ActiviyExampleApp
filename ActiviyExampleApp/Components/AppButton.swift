@@ -19,13 +19,13 @@ struct AppButton : View {
             action()
         } label: {
             Text(text)
-                .foregroundStyle(.white)
+                .foregroundStyle(.accent)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity)
                 .frame(height: 55)
-                .background(isDescructive ? Color.red : Color.brown)
-                .background(self.disable ? Color.gray : Color.brown)
+                .background(self.disable ? Color.gray : (self.isDescructive ? Color.red : Color.button))
                 .clipShape(RoundedRectangle(cornerRadius: 12))
+                .shadow(radius: self.disable ? 0 : 2, x: self.disable ? 0 : 2, y: self.disable ? 0 : 2)
         }
     }
 }

@@ -31,7 +31,9 @@ struct OnboardPageTwo: View {
                 ToolbarItem(placement: .cancellationAction)
                 {
                     Button {
-                        screen = .zero
+                        withAnimation {
+                            screen = .zero
+                        }
                     } label: {
                         Image(systemName:"chevron.compact.backward")
                         Text("Voltar")
@@ -41,7 +43,9 @@ struct OnboardPageTwo: View {
                 }
                 ToolbarItem(placement: .confirmationAction){
                     Button {
-                        screen = .two
+                        withAnimation {
+                            screen = .two
+                        }
                     } label: {
                         Text("Pular")
                             .font(.system(size: 22))
