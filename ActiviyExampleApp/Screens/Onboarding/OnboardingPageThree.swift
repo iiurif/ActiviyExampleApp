@@ -51,7 +51,9 @@ struct OnboardingPageThree : View {
                     ToolbarItem(placement: .cancellationAction)
                     {
                         Button {
-                            screen = .one
+                            withAnimation {
+                                screen = .one
+                            }
                         } label: {
                             Image(systemName:"chevron.compact.backward")
                             Text("Voltar")

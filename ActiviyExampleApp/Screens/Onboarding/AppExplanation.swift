@@ -31,7 +31,9 @@ struct AppExplanation: View {
             .toolbar{
                 ToolbarItem(placement: .confirmationAction){
                     Button {
-                        screen = .two
+                        withAnimation {
+                            screen = .two
+                        }
                     } label: {
                         Text("Pular")
                             .font(.system(size: 22))

@@ -20,7 +20,7 @@ struct OnboardingView: View {
             Color.fundoDefault
                 .ignoresSafeArea()
             if isActive {
-                OnboardingFlow()
+                OnboardingFlow(screen: .zero)
                     .transition(.move(edge: .top))
             } else {
                 Image("AppLogo")
@@ -28,7 +28,7 @@ struct OnboardingView: View {
                     .frame(width: 200,height: 250)
                     .scaledToFit()
             }
-            
+            }
         }.onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {

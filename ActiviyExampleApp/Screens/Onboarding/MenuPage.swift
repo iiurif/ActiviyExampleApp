@@ -1,3 +1,14 @@
+
+
+//
+//  OnboardingPageFour.swift
+//  ActiviyExampleApp
+//
+//  Created by Iuri Ferreira on 20/03/25.
+//
+
+
+
 import SwiftUI
 
 struct MenuPage: View {
@@ -6,6 +17,7 @@ struct MenuPage: View {
     @State private var navigateToHome = false // State to trigger navigation
     
     var body: some View {
+
         NavigationStack {
             ZStack{
                 VStack{
@@ -29,6 +41,36 @@ struct MenuPage: View {
                         navigateToHome = true
                     }
                 }
+              
+        ZStack{
+            VStack(spacing: 40){
+                VStack{
+                    Image("MenuCat")
+                        .offset(y: 30)
+                        .zIndex(1)
+                    Text("Olá Fulano! O que você deseja fazer agora?")
+                        .foregroundStyle(.accent)
+                        .fontWeight(.bold)
+                        .frame(width: 248)
+                        .padding(40)
+                        .background(Color.ballons)
+                        .clipShape(RoundedRectangle(cornerRadius: 72))
+                } //VStack
+                
+                VStack{
+                    AppButton(text: "Aceitar sugestões aleatórias"){
+                        withAnimation {
+                            
+                        }
+                    }
+                    .padding(.vertical, 10)
+                    
+                    AppButton(text: "Acessar Atividades"){
+                        withAnimation {
+                            
+                        }
+                    }
+                } //VSatck
                 .padding(.horizontal, 30)
             }
         }

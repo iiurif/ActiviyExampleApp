@@ -12,8 +12,7 @@ class User {
     
     var name : String = ""
     var activities : [Activity] = []
-    
-    private init() {}
+    var firstAcess: Bool = false
     
     static let shared = User()
     
